@@ -38,7 +38,8 @@ class ObjectHandler:
         if self.cfgs.open_communication:
             self.socket = ZmqSocket(self.cfgs)
 
-        self.lang_sam = LangSAMProcessor()
+        sam_type = self.cfgs.sam_type or "vit_h"
+        self.lang_sam = LangSAMProcessor(sam_type=sam_type)
 
     def receive_input(self, tries):
         if self.cfgs.open_communication:

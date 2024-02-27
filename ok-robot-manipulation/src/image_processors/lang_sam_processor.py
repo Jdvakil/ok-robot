@@ -8,10 +8,10 @@ from lang_sam import LangSAM
 
 
 class LangSAMProcessor(ImageProcessor):
-    def __init__(self):
+    def __init__(self, sam_type='vit_h'):
         super().__init__()
 
-        self.model = LangSAM()
+        self.model = LangSAM(sam_type=sam_type)
 
     def detect_obj(
         self,

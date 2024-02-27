@@ -48,6 +48,7 @@ parser.add_argument(
     "--sampling_rate", type=float, default=1.0, help="Sampling rate of points [<= 1]"
 )
 parser.add_argument("--environment", default="./example_data", help="Environment name")
+parser.add_argument("--sam_type", default="vit_h", choices=['vit_b', 'vit_l', 'vit_h'], help="LangSam model size (vit_b, vit_l, vit_h)")
 cfgs = parser.parse_args()
 cfgs.max_gripper_width = max(0, min(0.2, cfgs.max_gripper_width))
 
